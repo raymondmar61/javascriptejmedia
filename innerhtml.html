@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 30 Replace content using innerHTML, 31 Reading content using innerHTML</title>
+<script type="text/javascript">
+	function changeStyle() {
+		var paragraph = document.getElementsByClassName("para");
+		var changeText = paragraph[0].innerHTML = "New Text 1";
+		var changeText = paragraph[1].innerHTML = "New Text 2";
+	}
+
+	function changeStyleReadContent() {
+		var paragraph = document.getElementsByClassName("parareadcontent");
+		var firstParaText = paragraph[0].innerHTML;
+		var secondParaText = paragraph[1].innerHTML;
+		//var addThem = paragraph[2].innerHTML = firstParaText + secondParaText;
+		var addThem = paragraph[2].innerHTML = firstParaText + " " + secondParaText;
+	}
+
+	function changeStyleReadContentSeeCombineOnly() {
+		var paragraph = document.getElementsByClassName("parareadcontent");
+		var firstParaText = paragraph[0].innerHTML;
+		var secondParaText = paragraph[1].innerHTML;
+		//var addThem = paragraph[2].innerHTML = firstParaText + secondParaText;
+		var addThem = paragraph[2].innerHTML = firstParaText + " " + secondParaText;
+		var firstParaText = paragraph[0].innerHTML = "";
+		var secondParaText = paragraph[1].innerHTML = "";
+	}
+</script>
+</head>
+<body>
+<p class="para">Old Text 1</p>
+<p class="para">Old Text 2</p>
+<button onclick="changeStyle()">Hit submit for some new text</button>
+
+<p class="parareadcontent">Hello there</p>
+<p class="parareadcontent">from the Moon</p>
+<p class="parareadcontent"></p>
+<button onclick="changeStyleReadContent()">Hit submit to combine these words</button>
+<button onclick="changeStyleReadContentSeeCombineOnly()">Hit submit to see the combined sentence only</button>
+
+<p class="ignore">Hello there.  The innerHTML property works against the content inside the p element.  The source property works against the src attribute in the img tag.</p>
+</body>
+</html>

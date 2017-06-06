@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 36 Creating A New Element, 37 Creating a new element part 2, 38 Remove Element, 39 Create attribute</title>
+<style>
+	#darkbluefontcolor {
+	color: darkblue;
+	}
+</style>
+<script type="text/javascript">
+	function newParagraph() {
+		var elementHeading2 = document.createElement("h2"); //create a heading
+		var main = document.getElementById("main");
+		main.appendChild(elementHeading2);
+		var textHeading2 = document.createTextNode("A Fish Lesson");
+		elementHeading2.appendChild(textHeading2);
+		
+		var elementParagraph = document.createElement("p"); //create a paragraph element denoted "p"
+		main.appendChild(elementParagraph);
+		var text = document.createTextNode("A fish is any member of a paraphyletic group of organisms that consist of all gill-bearing aquatic craniate animals that lack limbs with digits.  Included in this definition are the living hagfish, lampreys, and cartilaginous and bony fish, as well as various extinct related groups.  Most fish are ectothermic, allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature.  Fish are abundant in most bodies of water.  They can be found in nearly all aquatic environments, from high mountain streams (e.g., char and gudgeon) to the abyssal and even hadal depths of the deepest oceans (e.g., gulpers and anglerfish). At 32,000 species, fish exhibit greater species diversity than any other group of vertebrates");
+		elementParagraph.appendChild(text)
+
+		// Video 36 Creating A New Element
+		// var element = document.createElement("p"); //create a paragraph element denoted "p"
+		// var main = document.getElementById("main");
+		// main.appendChild(element);
+		// var text = document.createTextNode("A fish is any member of a paraphyletic group of organisms that consist of all gill-bearing aquatic craniate animals that lack limbs with digits.  Included in this definition are the living hagfish, lampreys, and cartilaginous and bony fish, as well as various extinct related groups.  Most fish are ectothermic, allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature.  Fish are abundant in most bodies of water.  They can be found in nearly all aquatic environments, from high mountain streams (e.g., char and gudgeon) to the abyssal and even hadal depths of the deepest oceans (e.g., gulpers and anglerfish). At 32,000 species, fish exhibit greater species diversity than any other group of vertebrates");
+		// element.appendChild(text)
+
+		var paragraphAttribute = document.createAttribute("id");  //darkbluefontcolor is a CSS ID.  Create a ID element denoted "id"
+		paragraphAttribute.value = "darkbluefontcolor";
+		elementParagraph.setAttributeNode(paragraphAttribute);
+
+	}
+	
+	function removeHeader() {
+		var elementHeading2 = document.getElementsByTagName("h2")[2];  //remove the third H2 denoted by [2].  First and second h2 added as dummies.  First as count zero.  Second as count one.
+		var parent = elementHeading2.parentNode;  //parentNode gets the parent node for elementHeading2 which is div.  It Also gets the parent node for elementParagraph below.
+		parent.removeChild(elementHeading2);
+
+		var elementParagraph = document.getElementsByTagName("p")[1];  //remove the second p denoted by [1].  First p is After defeating the Romans . . . .  First as count zero.  Second as count one.	
+		parent.removeChild(elementParagraph);
+	}
+
+</script>
+</head>
+<body>
+
+<div id="main">
+<h2>Dummy H2 One</h2>
+<p>After defeating the Romans at the Battle of Lake Trasimene, Hannibal now moved his forces down south.  There was panic in Rome and Quintus Fabius Maximus was appointed dictator to deal with Hannibal.  Fabius, however, refused to meet Hannibal in the open field and this strategy became highly unpopular in Rome.  Romans were used to attacking, not hiding.  The Romans were forced to go on the offensive after Hannibal positioned his forces betweeen Rome and it's vital grain supply.  This setup the epic Battle of Cannae.  Here Hannibal defeated the Romans inflicting the worst single day defeat in Rome's history.</p>
+<br>
+<h2>Dummy H2 Two</h2>
+</div>
+<br>
+<button onclick="newParagraph()">Click if you want to read about another battle</button>
+<br>
+<br>
+<button onclick="removeHeader()">Click here to remove section</button>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 26 getElementById Method, 27 getElementsByTagName method, 28 getElementsByTagName Part 2, 29 getElementsByClassName</title>
+<script type="text/javascript">
+	function changeStyle() {
+		var text = document.getElementById ("para1").style.color = "blue";
+		var text = document.getElementById ("para1").style.backgroundColor = "red";
+		var text = document.getElementById ("para1").style.fontStyle = "italic";
+	}
+
+	function changeStyleTagName() {
+		var paragraph = document.getElementsByTagName("p");
+		var changeParaText = paragraph[1].style.color = "green";
+		
+		var changeParaText = paragraph[0].style.fontStyle = "italic";
+		var changeParaText = paragraph[1].style.fontStyle = "italic";
+		var changeParaText = paragraph[2].style.fontStyle = "italic";
+		var changeParaText = paragraph[3].style.fontStyle = "italic";
+		// You don't need to specify each Tag node.  Use a for loop.
+	}
+
+	function changeStyleTagNameLoop() {
+		var paragraph = document.getElementsByTagName("p");
+		for (var i = 0; i < paragraph.length; i++) {
+			paragraph[i].style.fontStyle = "italic";
+		}
+	}
+
+	function changeStyleClassName() {
+		var paragraph = document.getElementsByClassName("para");
+		var changeText = paragraph[0].style.color = "orange"
+		var changeText = paragraph[1].style.color = "orange"
+	}
+
+	function changeStyleClassNameLoop() {
+		var paragraph = document.getElementsByClassName("para");
+		for (var i = 0; i < paragraph.length; i++) {
+			paragraph[i].style.color = "orange";
+		}
+	}
+</script>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<th>CSS</th>
+		<th>JavaScript</th>
+	</tr>
+	<tr>
+		<td>color</td>
+		<td>color</td>
+	</tr>
+	<tr>
+		<td>border</td>
+		<td>border</td>
+	</tr>
+	<tr>
+		<td>margin</td>
+		<td>margin</td>
+	</tr>
+	<tr>
+		<td>background-Color</td>
+		<td>backgroundColor</td>
+	</tr>
+	<tr>
+		<td>font-style</td>
+		<td>fontStyle</td>
+	</tr>
+	<tr>
+		<td>text-decoration</td>
+		<td>textDecoration</td>
+	</tr>
+	<tr>
+		<td>padding-left</td>
+		<td>padding-left</td>
+	</tr>
+	<tr>
+		<td>border-left</td>
+		<td>border-left</td>
+	</tr>
+</table>
+<p id="para1">Some text for this tutorial1.  &lt;p&gt; node list number 0</p>
+<p id="para2">Some text for this tutorial2.  &lt;p&gt; node list number 1</p>
+<p id="para3">Some text for this tutorial3.  &lt;p&gt; node list number 2</p>
+<p id="para4">Some text for this tutorial4.  &lt;p&gt; node list number 3</p>
+<button onclick ="changeStyle()">Submit</button>
+<button onclick ="changeStyleTagName()">Hit Submit to change all the text</button>
+<button onclick ="changeStyleTagNameLoop()">Hit Submit to change all the text Loop</button>
+
+<p>1 getElementById method graps the element ID.  Or select the element we want to target.  getElementById() selects elements by their id &lt;p <font style="color: red">id</font>="para"&gt;text&lt;/p&gt;.  getElementsByTagName() select elements by their tag name <font style="color: red">&lt;p</font> id="para"&gt;text&lt;/p&gt;.  getElementsByClassName() Select elements by their class name &lt;p <font style="color: red">class</font>="para"&gt;text&lt;/p&gt;</p>
+
+<p>2 We can start to style the element with the Style object which is another object in the DOM.  Or change whatever we want to change in that element:  CSS styles, change text, change images, validation, create new pages, change internals.</p>
+
+<p class="para">Para text for this tutorial.  Class node list number 0.</p>
+<p class="para">Para text for this tutorial.  Class node list number 1.</p>
+<p class="para">Para text for this tutorial.  Class node list number 2.</p>
+<p class="para">Para text for this tutorial.  Class node list number 3.</p>
+<button onclick = "changeStyleClassName()">Change paragraph text with class name para</button>
+<button onclick = "changeStyleClassNameLoop()">Change paragraph text with class name para Loop</button>
+</body>
+</html>

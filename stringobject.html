@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 22 String Obejct</title>
+<script type="text/javascript">
+	var hello = "Hello how are you doing";
+	document.write(hello);
+	hello = hello.toUpperCase();
+	document.write(hello);  //prints HELLO HOW ARE YOU DOING
+	hello = hello.length
+	document.write(hello);  //prints 23.  Count starts at 0.
+
+	var hello2 = "Hello how are you doing";
+	hello2 = hello2.charAt(4);
+	document.write(hello2);  //prints o.  4th index location.
+
+	var hello3 = "Hello how are you doing";
+	hello3 = hello3.replace("doing","today");
+	document.write(hello3)  //prints Hello how are you today
+	hello3 = hello3.bold();
+	document.write(hello3)  //prints Hello how are you today in bold
+	hello3 = hello3.italics();
+	document.write(hello3)  //prints Hello how are you today in bold and italics
+</script>
+</head>
+<body>
+<p>Global objects are objects JavaScript provides us.  They're already written for us.  Just use their properties and methods.</p>
+</body>
+</html>

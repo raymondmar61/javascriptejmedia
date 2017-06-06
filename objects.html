@@ -1,0 +1,42 @@
+</!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 18 Objects, 19 Objects Part 2, 20 Objects Part 3, 21 Objects Part 4</title>
+<script type="text/javascript">
+	var orc = {
+		hair: "green",
+		age: 26,
+		stomachFull: true,
+		eat: function() {
+			document.write("YUM YUM!");
+		}
+	};	
+	document.write(orc.age);  //prints 26
+	orc.age = orc.age + 2;
+	document.write(orc.age);  //prints 28
+	var newAge = orc.age + 2;
+	document.write(newAge);  //prints 28
+	orc.eat();  //prints YUM YUM!
+	orc.stomachFull = false;
+	if (orc.stomachFull == true) {
+		orc.eat();
+	}
+	else {
+		document.write("Not eating.");  //Not eating is returned
+	}
+	orc.hair = "purple";
+	document.write(orc.hair);  //prints purple
+	orc.hair = 1;
+	document.write(orc.hair);  //prints 1
+	orc.hair2 = "red";  //add a new property to Orc
+	document.write(orc.hair2);  //prints red
+	delete orc.hair2;  //deletes a property
+	document.write(orc.hair2);  //prints undefined
+</script>
+</head>
+<body>
+<p>Variables inside an object are called properties.  Real life objects have multiple properties.  Use the . to access an object's properties.</p>
+<p>For example, three standalone variables:  color, height, and weight.  Take the three standalone variables to an object named Orc.  Orc is the object with three properties:  color, height, and weight.  The three were variables.  The three are now properties in object Orc.  The three properties color, height, and weight are related to object Orc.  A car engine property is not related to an Orc.</p>
+<p>Use functions to give an object action.  Call functions for action.  For example, the Orc can yell, run, walk, sleep, and eat.  Functions inside an object are called methods.  Use the . to access an object's methods.  BTW, document.write() is an object.  Document is the object.  Write() is the method.</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 40 Traversing the DOM, 41 Traversing the DOM Part 2, 42 Traversing the DOM Part 3</title>
+<script type="text/javascript">
+	function changeTextchildNodes() {
+		var parentelement = document.getElementById("main");
+		var childelement = parentelement.childNodes[3];  //childNodes means every node.  There's a node for white space.  The zero position is the white space node.  The first position is the first paragraph.  The second position is the second white psace mode.
+		childelement.style.color = "blue";
+	}
+
+	function changeTextfirstElementChild() {
+		var parentelement = document.getElementById("main");
+		var childelement = parentelement.firstElementChild;  //gives us the first HTML element, No whilte space node to worry about.  Also, lastElementChild exists.
+		childelement.style.color = "red";
+	}
+
+	function changeTextchildgotparentNode() {
+		var child = document.getElementById("p1");
+		var parent = child.parentNode; //parentNode gets the parent to the child "p1" which is "main" in this case.  Also child.parentElement; works becuase either gets the parent to the child "p1" which is "main".
+		parent.style.color = "green";  //now we have parent which is "main", color everything in parent green
+	}
+
+	function changeTextchildtochildnext() {
+		var paragraph2 = document.getElementById("p2");
+		var sibling = paragraph2.nextElementSibling;
+		sibling.style.color = "orange";
+	}
+	function changeTextchildtochildprevious() {
+		var paragraph2 = document.getElementById("p2");
+		var sibling = paragraph2.previousElementSibling;
+		sibling.style.color = "orange";
+	}
+
+</script>
+</head>
+<body>
+
+<div id="main">
+<p id = "p1">Paragraph one.</p>
+<p id = "p2">Paragraph two.</p>
+<p>Paragraph three.</p>
+<p>Paragraph four.</p>
+<p>Remember the major nodes attribute, text, and element nodes.</p>
+</div>
+&nbsp;
+<button onclick="changeTextchildNodes()">Click here to change paragraph two.</button>
+<button onclick="changeTextfirstElementChild()">Click here to change paragraph one.</button>
+<button onclick="changeTextchildgotparentNode()">Click here to change paragraphs to green.</button>
+<button onclick="changeTextchildtochildnext()">Click here to change paragraph three to orange.</button>
+<button onclick="changeTextchildtochildprevious()">Click here to change paragraph one to orange.</button>
+
+</body>
+</html>

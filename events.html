@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 33 Intro to events, 34 The mouseover event, 35 Change image with mouseover</title>
+<script type="text/javascript">
+	function changeColor() {
+		var text = document.getElementById("para1").style.color = "blue";
+	}
+
+	function changeBackground() {
+		var text = document.getElementById("paramouse").style.backgroundColor = "red";
+	}
+
+	//I added onmouseout because I know onmouseout
+	function unchangeBackground() {
+		//var text = document.getElementById("paramouse").style.backgroundColor = "white";
+		var text = document.getElementById("paramouse").style.backgroundColor = "";
+	}
+
+	function newPicture() {
+		//need .src property from the document object related to .src html
+		document.getElementById("image").src = "californiahighwaypatrolpolicecar016.jpg"
+	}
+
+	function oldPicture() {
+		//need .src property from the document object related to .src html
+		document.getElementById("image").src = "californiahighwaypatrolpolicecar015.jpg"
+	}
+</script>
+
+</head>
+<body>
+<p id = "para1">Some text for this tutorial</p>
+<button onclick="changeColor()">Submit</button>
+
+<p id="paramouse" onmouseover="changeBackground()" onmouseout="unchangeBackground()">Some text to onmouseover</p>
+
+<img src="californiahighwaypatrolpolicecar015.jpg" id="image" onmouseover="newPicture()" onmouseout="oldPicture()">
+
+<p id = "ignore1">1.  Choose the HTML element where we place our event.  In this case, the button element.</p>
+<p id = "ignore2">2.  Choose the event we want to use.  In this case, onclick.</p>
+<p id = "ignore3">When the event happens our JavaScript function is called by the onclick event.  In this case, the click is the event.</p>
+
+</body>
+</html>

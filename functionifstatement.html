@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EJ Media 13 Function and If Statement, 14 Return Statement, 15 Global and Local Variables, 16 Pass By Value</title>
+<script type="text/javascript">
+	var name = "Henry"; //Global Variable
+
+	function batting(player, distance) {
+		if (distance <=350 && distance > 0) {
+			document.write(player + " hit the ball ");
+		}
+		else if (distance <=0) {
+			document.write(player + " STRUCK OUT");
+		}
+		else {
+			document.write(player + " hit a home run ");
+		}
+	}
+
+	function add(x,y) {
+		result = x * y;
+		document.write(result);
+	}
+	function addreturn(x,y) {
+		result = x * y;
+		return result; //sending something back to whatever called the function in the first place
+	}
+
+	function printName() {
+		var name2 = "Sarah"; //Local Variable, the "var" keyword makes name2 a local variable in function; otherwise, name2 is a global variable.
+		name3 ="SarahGlobal"; //Global Variable
+	}
+
+	function battingpassbyvalue(player, distance) {
+		var more = player + " hit the ball " + distance + " feet";
+		document.write(more)
+		document.write("<p>Passing two values player and distance which are arguments passed to the function battingpassbyvalue.  The key point is the two values are copied to the arguments passed to the function.</p>")
+	}
+
+batting("Steve",0);
+document.write("<br>");
+add(6, 5);  //Prints 30
+document.write("<br>");
+var theResult = addreturn(60, 50);
+document.write(theResult)  //Print 3000
+document.write("<br>");
+battingpassbyvalue("Steve",351);
+document.write("<br>");
+printName();
+document.write(name);  //Prints Henry
+document.write("<br>");
+document.write(name3);  //Notice I must call printName(); function
+document.write(name2);  //Print nothing
+document.write("<br>");
+</script>
+</head>
+<body>
+</body>
+</html>
